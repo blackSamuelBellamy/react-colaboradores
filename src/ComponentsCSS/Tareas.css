@@ -3,12 +3,21 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 30vw;
-    height: 65vh;
+    width: 33vw;
+    height: 73vh;
     background: rgba(255, 255, 255, .1);
     position: relative;
     border-radius: 15px;
     box-shadow: 0 5px 35px rgba(0, 0, 0, .4);
+    margin-top: 4%;
+    position: relative;
+}
+
+form h2 {
+    position: relative;
+    top: -7%;
+    color: #fff;
+    text-shadow: 0 3px 3px #000;
 }
 
 form::before {
@@ -32,7 +41,14 @@ form::before {
     margin-bottom: 10%;
 }
 
-input {
+label {
+    margin-left: -69%;
+    margin-bottom: 2%;
+    color: #fff;
+    text-shadow: 0 2px 2px #000;
+}
+
+.inputForm {
     width: 15em;
     height: 2em;
     border: none;
@@ -41,3 +57,66 @@ input {
     padding-left: 15%;
 }
 
+.iconsForm {
+    position: absolute;
+    left: 2%;
+    z-index: 11;
+    top: 60%;
+}
+
+form button {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .3);
+    width: 10em;
+    height: 2.5em;
+    border-radius: 7px;
+    background: transparent;
+    box-shadow: 0 25px 50px inset rgba(255, 255, 255, .5);
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 0 2px 2px #000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+input, button {
+    position: relative;
+    z-index: 10;
+}
+
+@media(max-width: 1000px) {
+    form {
+        width: 50vw;
+    }
+}
+
+@media(max-width: 650px) {
+    form {
+        width: 65vw;
+        height: 60vh;
+    }
+
+    form h2 {
+        font-size: 1.4em;
+    }
+}
+
+
+@media(max-width: 450px) {
+    form {
+        width: 75vw;
+    }
+
+    form h2 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 430px) {
+    form {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
