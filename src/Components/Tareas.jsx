@@ -40,6 +40,7 @@ const Tareas = ({mainLista, setList}) => {
                         value={nuevoColaborador} id="nombre"
                         placeholder="Escribe nombre"
                         className="inputForm"
+                        required
                     />
                     <BsFillPersonFill className="iconsForm"/>
 
@@ -53,6 +54,7 @@ const Tareas = ({mainLista, setList}) => {
                         value={nuevoCorreo} id="correo"
                         placeholder="Escribe Correo"
                         className="inputForm"
+                        required
                     />
                     <FiMail className="iconsForm"/>
                     

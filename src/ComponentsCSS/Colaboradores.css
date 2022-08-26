@@ -1,0 +1,50 @@
+.listaColaboradores {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, .2);
+    position: absolute;
+    left: 78%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: .5s;
+}
+
+.listaColaboradores::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.listaColaboradores::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 80%;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.listaColaboradores:hover {
+    box-shadow: 0 5px 10px inset #ccc, 0 5px 10px #fff;
+}
+
+@media(max-width: 1000px) {
+    .listaColaboradores {
+        left: 84%;
+    }
+}
+
+@media(max-width: 650px) {
+    .listaColaboradores {
+        left: 78%;
+        top: 86%;
+    }
+}

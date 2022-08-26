@@ -50,18 +50,26 @@ label {
 
 .inputForm {
     width: 15em;
-    height: 2em;
+    height: 2.8em;
     border: none;
     outline: none;
     border-radius: 5px;
-    padding-left: 15%;
+    padding-left: 18%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3) inset;
+    text-shadow: 0 2px #000;
+    letter-spacing: 1px;
 }
 
 .iconsForm {
     position: absolute;
     left: 2%;
     z-index: 11;
-    top: 60%;
+    top: 55%;
+    color: #035;
+    font-size: 1.4em;
 }
 
 form button {
@@ -71,7 +79,7 @@ form button {
     height: 2.5em;
     border-radius: 7px;
     background: transparent;
-    box-shadow: 0 25px 50px inset rgba(255, 255, 255, .5);
+    box-shadow: 0 5px 10px inset #ccc;
     cursor: pointer;
     color: #fff;
     text-shadow: 0 2px 2px #000;
