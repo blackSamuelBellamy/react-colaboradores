@@ -9,7 +9,7 @@ const Tareas = ({mainLista, setList}) => {
     
     const [nuevoColaborador, setNuevoColaborador] = useState('')
     const [nuevoCorreo, setNuevoCorreo] = useState('')
-    const [nuevoID, setNuevoID] = useState({mainLista}.length + 1)
+    const [nuevoID, setNuevoID] = useState(mainLista.length + 1)
 
     const nuevoNombreColaborador = e => setNuevoColaborador(e.target.value)
     const nuevoCorreoColaborador = e => setNuevoCorreo(e.target.value)
@@ -17,7 +17,9 @@ const Tareas = ({mainLista, setList}) => {
     const agregarColaborador = e => {
 
         e.preventDefault()
-        const nuevoNombre = [...{mainLista}, {
+
+       if(nuevoColaborador !== '' && nuevoCorreo !== '') {
+        const nuevoNombre = [...mainLista, {
             id: nuevoID,
             nombre: nuevoColaborador,
             email: nuevoCorreo
@@ -26,16 +28,17 @@ const Tareas = ({mainLista, setList}) => {
         setList(nuevoNombre)
         setNuevoColaborador('')
         setNuevoCorreo('')
+       }
     }
 
   
     return (
         <>
-            <form>
+            <form onSubmit={agregarColaborador} className="formTareas">
                 <h2>Ingresa Colaborador/a</h2>
                 <div className="inputBox">
 
-                    <label for="nombre" >Nombre</label>
+                    <label htmlFor="nombre" >Nombre</label>
                     <input type="text" onChange={nuevoNombreColaborador}
                         value={nuevoColaborador} id="nombre"
                         placeholder="Escribe nombre"
@@ -49,7 +52,7 @@ const Tareas = ({mainLista, setList}) => {
 
                 <div className="inputBox">
 
-                    <label for="correo">Email</label>
+                    <label htmlFor="correo">Email</label>
                     <input type="email" onChange={nuevoCorreoColaborador}
                         value={nuevoCorreo} id="correo"
                         placeholder="Escribe Correo"
@@ -60,16 +63,8 @@ const Tareas = ({mainLista, setList}) => {
                     
                 </div>
 
-                <button onClick={agregarColaborador}>Agregar</button>
+                <button type="submit">Agregar</button>
             </form>
-
-            {/* <ul>
-                
-                {listaColaboradores.map(colaborador => <li key={colaborador.id}>
-                    {colaborador.nombre}
-                    {'  /  ' + colaborador.email}
-                </li>)}
-            </ul> */}
         </>
     );
 }

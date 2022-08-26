@@ -11,7 +11,7 @@ const App = () =>  {
     <div className="container">
       <Header arrMain={listaColaboradores} />
       <Tareas mainLista={listaColaboradores} setList={setListaColaboradores} /> 
-      <Colabores />
+      <Colabores lista={listaColaboradores} />
     </div>
   );
 }

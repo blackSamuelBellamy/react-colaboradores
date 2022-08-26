@@ -1,4 +1,4 @@
-form {
+.formTareas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,14 +13,14 @@ form {
     position: relative;
 }
 
-form h2 {
+.formTareas h2 {
     position: relative;
     top: -7%;
     color: #fff;
     text-shadow: 0 3px 3px #000;
 }
 
-form::before {
+.formTareas::before {
     content: '';
     position: absolute;
     top: 10px;
@@ -63,6 +63,13 @@ label {
     letter-spacing: 1px;
 }
 
+.inputForm::placeholder {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 2px 2px #000;
+    font-size: 1.1em;
+    
+}
+
 .iconsForm {
     position: absolute;
     left: 2%;
@@ -72,7 +79,7 @@ label {
     font-size: 1.4em;
 }
 
-form button {
+.formTareas button {
     outline: none;
     border: 1px solid rgba(255, 255, 255, .3);
     width: 10em;
@@ -85,6 +92,11 @@ form button {
     text-shadow: 0 2px 2px #000;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: .5s;
+}
+
+.formTareas button:hover {
+    box-shadow: 0 50px 100px inset rgba(255, 255, 255, .2);
 }
 
 input, button {
@@ -93,37 +105,38 @@ input, button {
 }
 
 @media(max-width: 1000px) {
-    form {
+    .formTareas {
         width: 50vw;
     }
 }
 
 @media(max-width: 650px) {
-    form {
+    .formTareas {
         width: 65vw;
         height: 60vh;
+        top: -4%;
     }
 
-    form h2 {
+    .formTareas h2 {
         font-size: 1.4em;
     }
 }
 
 
 @media(max-width: 450px) {
-    form {
+    .formTareas {
         width: 75vw;
     }
 
-    form h2 {
+    .formTareas h2 {
         font-size: 1.1em;
     }
 }
 
 @media (max-width: 430px) {
-    form {
+    .formTareas {
         position: absolute;
-        top: 55%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
     }

@@ -1,6 +1,6 @@
 .listaColaboradores {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background: rgba(255, 255, 255, .2);
     position: absolute;
     left: 78%;
@@ -13,8 +13,8 @@
 .listaColaboradores::before {
     content: '';
     position: absolute;
-    width: 80%;
-    height: 3px;
+    width: 70%;
+    height: 2px;
     background: #fff;
     top: 50%;
     left: 50%;
@@ -24,8 +24,8 @@
 .listaColaboradores::after {
     content: '';
     position: absolute;
-    width: 3px;
-    height: 80%;
+    width: 2px;
+    height: 70%;
     background: #fff;
     top: 50%;
     left: 50%;
@@ -34,17 +34,113 @@
 
 .listaColaboradores:hover {
     box-shadow: 0 5px 10px inset #ccc, 0 5px 10px #fff;
+    animation: rotar 1s linear;
+}
+
+@keyframes rotar {
+    0% {transform: rotate(0);}
+    20% {transform: rotate(10deg);}
+    40% {transform: rotate(-15deg);}
+    60% {transform: rotate(15deg);}
+    80% {transform: rotate(10deg);}
+    100% {transform: rotate(0);}
+}
+
+.listaDesplegada {
+    width: 80vw;
+    min-height: 50%;
+    background: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    transition: .2s;
+    border-radius: 10px;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hambur {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    background: #000;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.hambur::before {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 2px;
+    background: #fff;
+    transform: translateX(20px) translateY(3px) rotateZ(45deg);
+}
+
+.hambur::after {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 2px;
+    background: #fff;
+    transform: translateX(20px) translateY(3px) rotateZ(-45deg);
+}
+
+
+ul {
+    height: 50vh;
+    width: 60vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+    position: relative;
+}
+
+ul li {
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s ease;
+}
+
+ul li:hover {
+    background: rgba(20, 20, 20, .6);
+} 
+
+@media(max-width: 1150px) {
+    li:first-of-type {
+        margin-top: 5%;
+    }
 }
 
 @media(max-width: 1000px) {
     .listaColaboradores {
         left: 84%;
     }
+ 
 }
 
 @media(max-width: 650px) {
     .listaColaboradores {
         left: 78%;
-        top: 86%;
+        top: 81%;
+    }
+}
+
+@media(max-width: 430px) {
+    .listaColaboradores {
+        left: 73%;
+        top: 82%;
     }
 }
