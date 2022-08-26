@@ -2,7 +2,7 @@ import '../ComponentsCSS/Header.css'
 import { useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 
-const Header = ({ arrMain }) => {
+const Header = ({ arrMain, arr}) => {
 
     const [busqueda, setBusqueda] = useState('')
     const haciendoBusqueda = e => setBusqueda(e.target.value)
@@ -23,9 +23,9 @@ const Header = ({ arrMain }) => {
                 const matching = busqueda1.toLowerCase()
                 const match1 = newArray[match].toLowerCase()
                 
-                if (matching.trim() === match1.trim()) console.log('wena shoro', busqueda)
+                if (matching.trim() === match1.trim()) alert(`Existe la persona ${arrMain[match].nombre}`)
             } else {
-                console.log('No hay coincidencias con: ', busqueda)
+                alert(`No hay coincidencias con: ${busqueda}`)
             }
             setBusqueda('')
         }

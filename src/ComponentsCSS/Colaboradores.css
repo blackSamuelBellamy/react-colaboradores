@@ -1,19 +1,21 @@
 .listaColaboradores {
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: 100%;
     background: rgba(255, 255, 255, .2);
     position: absolute;
-    left: 78%;
+    left: 30%;
+    top: 20%;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-    transition: .5s;
+    transition: 2s;
+    clip-path: circle(50px);
 }
 
 .listaColaboradores::before {
     content: '';
     position: absolute;
-    width: 70%;
+    width: 60px;
     height: 2px;
     background: #fff;
     top: 50%;
@@ -25,7 +27,7 @@
     content: '';
     position: absolute;
     width: 2px;
-    height: 70%;
+    height: 60px;
     background: #fff;
     top: 50%;
     left: 50%;
@@ -47,32 +49,73 @@
 }
 
 .listaDesplegada {
-    width: 80vw;
-    min-height: 50%;
-    background: rgba(255, 255, 255, .8);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 20;
-    transition: .2s;
-    border-radius: 10px;
-    overflow: scroll;
+
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    flex-direction: column;
+    background: linear-gradient(35deg, #03a9f4 0%, #378bdf 50%, #262626 50%, #275369 100%  );
+    animation: changing2 10s linear infinite;
+    position: absolute;
+    clip-path: circle(100% at 50% 0);
+    z-index: 35;
+    color: #fff;
+    text-shadow: 0 2px 2px #000;
+    transition: 2s;
+    overflow-y: scroll;
+  }
+  
+  .listaDesplegada::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(https://cdn.wallpapersafari.com/85/27/gZl8v7.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .2;
+  }
+  
+  .listaDesplegada::after {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(https://wallpaperaccess.com/full/745866.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .3;
+  }
+  
+  @keyframes changing2 {
+    
+    0% {
+      filter: hue-rotate(0deg);
+    }
+  
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
 
 .hambur {
     display: block;
     position: absolute;
     z-index: 20;
-    background: #000;
+    background: rgba(20, 20, 20, 1);
     height: 50px;
     width: 50px;
-    top: 0;
+    top: -35%;
     right: 0;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
 }
 
 .hambur::before {
@@ -81,7 +124,7 @@
     height: 80%;
     width: 2px;
     background: #fff;
-    transform: translateX(20px) translateY(3px) rotateZ(45deg);
+    transform: rotateZ(45deg);
 }
 
 .hambur::after {
@@ -90,7 +133,11 @@
     height: 80%;
     width: 2px;
     background: #fff;
-    transform: translateX(20px) translateY(3px) rotateZ(-45deg);
+    transform:  rotateZ(-45deg);
+}
+
+.hambur:hover {
+    box-shadow: 0 5px 10px rgba(255, 255, 255, .6);
 }
 
 
@@ -126,21 +173,34 @@ ul li:hover {
 
 @media(max-width: 1000px) {
     .listaColaboradores {
-        left: 84%;
+        left: 35%;
     }
  
 }
 
 @media(max-width: 650px) {
-    .listaColaboradores {
-        left: 78%;
-        top: 81%;
+     .listaColaboradores {
+        left: 35%;
+        top: 35%;
+    } 
+
+    .listaDesplegada {
+        clip-path: circle(100% at 0);
+    }
+
+   ul, li {
+        width: 100vw;
+    }
+
+    li {
+        padding: 0 10px;
+        font-size: .8em;
     }
 }
 
 @media(max-width: 430px) {
     .listaColaboradores {
-        left: 73%;
-        top: 82%;
+        left: 35%;
+        top: 39%;
     }
 }
