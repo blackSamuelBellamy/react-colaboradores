@@ -12,6 +12,7 @@
   background: linear-gradient(-30deg, #03a9f4 0%, #378bdf 50%, #262626 50%, #275369 100%  );
   animation: changing 10s linear infinite;
   position: relative;
+  overflow: hidden;
 }
 
 .container::before {

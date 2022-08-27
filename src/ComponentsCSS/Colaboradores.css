@@ -40,23 +40,41 @@
 }
 
 @keyframes rotar {
-    0% {transform: rotate(0);}
-    20% {transform: rotate(10deg);}
-    40% {transform: rotate(-15deg);}
-    60% {transform: rotate(15deg);}
-    80% {transform: rotate(10deg);}
-    100% {transform: rotate(0);}
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+
+    60% {
+        transform: rotate(15deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 .listaDesplegada {
 
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(35deg, #03a9f4 0%, #378bdf 50%, #262626 50%, #275369 100%  );
+    background: linear-gradient(35deg, #03a9f4 0%, #378bdf 50%, #262626 50%, #275369 100%);
     animation: changing2 10s linear infinite;
     position: absolute;
     clip-path: circle(100% at 50% 0);
@@ -65,9 +83,9 @@
     text-shadow: 0 2px 2px #000;
     transition: 2s;
     overflow-y: scroll;
-  }
-  
-  .listaDesplegada::before {
+}
+
+.listaDesplegada::before {
     content: '';
     position: absolute;
     height: 100vh;
@@ -77,9 +95,9 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: .2;
-  }
-  
-  .listaDesplegada::after {
+}
+
+.listaDesplegada::after {
     content: '';
     position: absolute;
     height: 100vh;
@@ -89,18 +107,18 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: .3;
-  }
-  
-  @keyframes changing2 {
-    
+}
+
+@keyframes changing2 {
+
     0% {
-      filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
     }
-  
+
     100% {
-      filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
     }
-  }
+}
 
 .hambur {
     display: block;
@@ -133,7 +151,7 @@
     height: 80%;
     width: 2px;
     background: #fff;
-    transform:  rotateZ(-45deg);
+    transform: rotateZ(-45deg);
 }
 
 .hambur:hover {
@@ -163,7 +181,7 @@ ul li {
 
 ul li:hover {
     background: rgba(20, 20, 20, .6);
-} 
+}
 
 @media(max-width: 1150px) {
     li:first-of-type {
@@ -175,20 +193,21 @@ ul li:hover {
     .listaColaboradores {
         left: 35%;
     }
- 
+
 }
 
 @media(max-width: 650px) {
-     .listaColaboradores {
+    .listaColaboradores {
         left: 35%;
         top: 35%;
-    } 
+    }
 
     .listaDesplegada {
         clip-path: circle(100% at 0);
     }
 
-   ul, li {
+    ul,
+    li {
         width: 100vw;
     }
 
