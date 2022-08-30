@@ -125,9 +125,9 @@
     position: absolute;
     z-index: 20;
     background: rgba(20, 20, 20, 1);
-    height: 50px;
-    width: 50px;
-    top: -35%;
+    height: 35px;
+    width: 35px;
+    top: -19%;
     right: 0;
     cursor: pointer;
     display: flex;
@@ -222,4 +222,4 @@ ul li:hover {
         left: 35%;
         top: 39%;
     }
-}
+} 

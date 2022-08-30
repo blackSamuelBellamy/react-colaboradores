@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     gap: 7%;
+    z-index: 100;
 
 }
 
@@ -20,6 +21,17 @@
     left: 10px;
     right:10px;
     background: rgba(255, 255, 255, .1);
+}
+
+h2 {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff;
+    text-align: center;
+}
+
+.inputSearchBox {
+    width: 14.5em;
+    height: 2em;
+    position: relative; 
 }
 
 .inputSearch {
@@ -35,7 +47,9 @@
 .iconHeader {
     position: absolute;
     z-index: 11;
-    left: 48%;
+    left: 87%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .headerButton {
@@ -68,8 +82,158 @@
     .inputSearch {
         text-align: center;
     }
-    .iconHeader {
-        top: 23%;
-        left: 72%;
+   
+}
+
+/*-------------------------------------*/
+
+
+.listaDesplegada2 {
+
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(35deg, #03a9f4 0%, #378bdf 50%, #262626 50%, #275369 100%);
+    animation: changing2 10s linear infinite;
+    position: absolute;
+    clip-path: circle(100% at 50% 0);
+    z-index: 38;
+    color: #fff;
+    text-shadow: 0 2px 2px #000;
+    transition: 2s;
+    overflow-y: scroll;
+    transition: 1s  all;
+    background: red;
+}
+
+.listaDesplegada2::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(https://cdn.wallpapersafari.com/85/27/gZl8v7.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .2;
+}
+
+.listaDesplegada2::after {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(https://wallpaperaccess.com/full/745866.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .3;
+}
+
+.listaNoDesplegada {
+    display: none;
+}
+
+@keyframes changing3 {
+
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
     }
 }
+
+.hambur2 {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    background: rgba(20, 20, 20, 1);
+    height: 35px;
+    width: 35px;
+    top: -19%;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.hambur2::before {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 2px;
+    background: #fff;
+    transform: rotateZ(45deg);
+}
+
+.hambur2::after {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 2px;
+    background: #fff;
+    transform: rotateZ(-45deg);
+}
+
+.hambur2:hover {
+    box-shadow: 0 5px 10px rgba(255, 255, 255, .6);
+}
+
+
+.ul2 {
+    height: 50vh;
+    width: 60vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+    position: relative;
+}
+
+.ul2 li {
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s ease;
+}
+
+.ul2 li:hover {
+    background: rgba(20, 20, 20, .6);
+}
+
+@media(max-width: 1150px) {
+    .ul2 li:first-of-type {
+        margin-top: 5%;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .listaDesplegada {
+        clip-path: circle(100% at 0);
+    }
+
+    .ul2,
+    .ul2 li {
+        width: 100vw;
+    }
+
+    .ul2 li {
+        padding: 0 10px;
+        font-size: .8em;
+    }
+}
+
+
+

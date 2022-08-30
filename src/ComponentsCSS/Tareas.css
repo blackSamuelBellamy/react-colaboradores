@@ -70,6 +70,10 @@ label {
     
 }
 
+.inputForm:active, .inputForm:focus {
+    background: transparent;
+}
+
 .iconsForm {
     position: absolute;
     left: 2%;
@@ -114,6 +118,7 @@ input, button {
     .formTareas {
         width: 65vw;
         height: 60vh;
+        min-height: 400px;
         top: -4%;
     }
 

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import '../ComponentsCSS/Tareas.css'
 import { BsFillPersonFill } from 'react-icons/bs'
-import {FiMail} from 'react-icons/fi'
+import { FiMail } from 'react-icons/fi'
 
 
 const Tareas = ({mainLista, setList}) => {
